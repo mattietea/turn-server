@@ -1,0 +1,55 @@
+{
+  "name": "turn-server",
+  "version": "1.0.0",
+  "description": "A GraphQL server for the Turn platform.",
+  "main": "./src/server.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node ./src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattietea/turn-server.git"
+  },
+  "author": "Matt Thomas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattietea/turn-server/issues"
+  },
+  "homepage": "https://github.com/mattietea/turn-server#readme",
+  "dependencies": {
+    "apollo-server": "^2.0.0",
+    "graphql": "^0.13.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-dotenv": "^0.1.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "eslint": "^5.2.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "nodemon": "^1.18.3"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "stage-3"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "standard",
+    "env": {
+      "node": true
+    },
+    "rules": {
+      "semi": [
+        2,
+        "always"
+      ]
+    }
+  }
+}
