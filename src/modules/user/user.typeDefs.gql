@@ -1,3 +1,14 @@
+type User {
+  firstName: String
+  lastName: String
+  email: String
+  password: String
+}
+
 type Query {
   user: String
+}
+
+type Mutation {
+  try(name: String!): String
 }

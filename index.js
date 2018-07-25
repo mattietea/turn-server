@@ -11,11 +11,15 @@ import { createSchema, to } from './src/services/utility.service.js';
     schema: createSchema(typeDefs, resolvers)
   });
 
+  process.on('unhandledRejection', error => {
+    console.log('unhandledRejection', error.message);
+  });
+
   [error] = await to(dbInit());
   if (error) console.error(`💀 The db failed`, error);
   console.log(`🎉 The db connection started`);
 
   [error, { url }] = await to(server.listen());
   if (error) console.error(`💥 The server failed`, error);
-  console.log(`🚀 The server started at ${url}`);
+  console.log(`🚀 The server started at ${url} `);
 })();
