@@ -4,7 +4,7 @@
   "description": "A GraphQL server for the Turn platform.",
   "main": "index.js",
   "scripts": {
-    "start": "rm -rf ./node_modules/.cache/babel-loader && nodemon --exec babel-node index.js",
+    "start": "nodemon --exec babel-node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,7 +19,8 @@
   "homepage": "https://github.com/mattietea/turn-server#readme",
   "dependencies": {
     "apollo-server": "^2.0.0",
-    "graphql": "^0.13.2"
+    "graphql": "^0.13.2",
+    "mongoose": "^5.2.5"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -43,7 +44,13 @@
     ],
     "plugins": [
       "import-graphql",
-      "import-glob"
+      "import-glob",
+      [
+        "babel-plugin-dotenv",
+        {
+          "replacedModuleName": "import-dotenv"
+        }
+      ]
     ]
   },
   "eslintConfig": {
