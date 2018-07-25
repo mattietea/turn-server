@@ -38,7 +38,7 @@
     "nodemon": "^1.18.3"
   },
   "nodemonConfig": {
-    "ext": "js,json,gql"
+    "ext": "js,json,gql,yaml"
   },
   "babel": {
     "presets": [

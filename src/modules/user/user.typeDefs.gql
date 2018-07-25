@@ -1,7 +1,28 @@
 type Query {
   userTest: String
+  userFindById(_id: ID!): User
+  userFindOne(user: UserInput!): User
+  userFindMany(user: UserInput): [User]
 }
 
 type Mutation {
   userTest(test: String!): String
+  userCreate(user: UserInput!): User
+}
+
+input UserInput {
+  firstName: String
+  lastName: String
+  email: String
+  password: String
+}
+
+type User {
+  _id: ID
+  firstName: String
+  lastName: String
+  email: String
+  password: String
+  createdAt: String
+  updateAt: String
 }
