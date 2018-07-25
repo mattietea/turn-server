@@ -1,14 +1,7 @@
-type User {
-  firstName: String
-  lastName: String
-  email: String
-  password: String
-}
-
 type Query {
-  user: String
+  userTest: String
 }
 
 type Mutation {
-  try(name: String!): String
+  userTest(test: String!): String
 }

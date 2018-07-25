@@ -1,3 +1,7 @@
 type Query {
-  auth: String
+  authTest: String
+}
+
+type Mutation {
+  authTest(test: String!): String
 }

@@ -1,8 +1,9 @@
-export default {
-  Query: {
-    user: () => 'user query'
-  },
-  Mutation: {
-    try: (idk, { name }) => `The name is ${name}`
-  }
+const Query = {
+  userTest: () => 'User query is working'
 };
+
+const Mutation = {
+  userTest: (root, { test }) => `User mutation is working: ${test}`
+};
+
+export default { Query, Mutation };
