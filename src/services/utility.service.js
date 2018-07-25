@@ -10,3 +10,10 @@ export const createSchema = (allTypeDefs, AllResolvers) => {
 
   return mergeSchemas({ schemas });
 };
+
+export const to = promise =>
+  promise
+    .then(data => {
+      return [null, data];
+    })
+    .catch(error => [error]);

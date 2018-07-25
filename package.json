@@ -2,9 +2,9 @@
   "name": "turn-server",
   "version": "1.0.0",
   "description": "A GraphQL server for the Turn platform.",
-  "main": "./src/server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "rm -rf ./node_modules/.cache/babel-loader && nodemon --exec babel-node ./src/server.js",
+    "start": "rm -rf ./node_modules/.cache/babel-loader && nodemon --exec babel-node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
