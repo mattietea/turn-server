@@ -24,6 +24,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-dotenv": "^0.1.1",
+    "babel-plugin-import-glob": "^2.0.0",
     "babel-plugin-import-graphql": "^2.6.2",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-3": "^6.24.1",
@@ -41,7 +42,8 @@
       "stage-3"
     ],
     "plugins": [
-      "import-graphql"
+      "import-graphql",
+      "import-glob"
     ]
   },
   "eslintConfig": {
