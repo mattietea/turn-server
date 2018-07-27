@@ -9,6 +9,7 @@ type Mutation {
   userTest(test: String!): String!
   userCreate(user: UserInput!): User
   userUpdateById(_id: ID, user: UserInput!): User
+  userRemoveById(_id: ID): Boolean!
 }
 
 input UserInput {

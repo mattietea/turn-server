@@ -6,30 +6,34 @@ const Query = {
   userTest: () => {
     return 'User query is working';
   },
-  userFindById: (object, { _id }) => {
+  userFindById: (root, { _id }) => {
     return User.findById(_id);
   },
-  userFindOne: (object, { user }) => {
+  userFindOne: (root, { user }) => {
     return User.findOne(user);
   },
-  userFindMany: (object, { user }) => {
+  userFindMany: (root, { user }) => {
     return User.find(user);
   }
 };
 
 const Mutation = {
-  userTest: (object, { test }) => {
+  userTest: (root, { test }) => {
     return `User mutation is working: ${test}`;
   },
-  userCreate: async (object, { user }) => {
+  userCreate: async (root, { user }) => {
     const exists = await User.findOne({ email: user.email }).exec();
     if (exists) throw new ApolloError(userText.duplicate);
     return new User(user).save();
   },
-  userUpdateById: async (object, { _id, user }) => {
+  userUpdateById: async (root, { _id, user }) => {
     const doc = await User.findById(_id).exec();
     if (!doc) throw new ApolloError(userText.invalidId);
     return doc.set(user).save();
+  },
+  userRemoveById: async (root, { _id }) => {
+    const doc = await User.findByIdAndRemove(_id).exec();
+    return !!doc;
   }
 };
 
