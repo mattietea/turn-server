@@ -1,4 +1,3 @@
-import { DB_URI } from 'import-dotenv';
 import mongoose from 'mongoose';
 
 export const dbInit = () => {
@@ -8,8 +7,10 @@ export const dbInit = () => {
     console.error(`💀 The database failed`, error);
   });
 
+  console.log(process.env.HI);
+
   return mongoose.connect(
-    DB_URI,
+    process.env.DB_URI,
     { useNewUrlParser: true }
   );
 };

@@ -4,7 +4,7 @@
   "description": "A GraphQL server for the Turn platform.",
   "main": "index.js",
   "scripts": {
-    "start": "BABEL_DISABLE_CACHE=1 nodemon --exec  babel-node index.js",
+    "start": "nodemon index.js --exec babel-node -r dotenv/config",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -30,6 +30,7 @@
     "babel-plugin-import-graphql": "^2.6.2",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-3": "^6.24.1",
+    "dotenv": "^6.0.0",
     "eslint": "^5.2.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.13.0",
@@ -48,13 +49,7 @@
     ],
     "plugins": [
       "import-graphql",
-      "import-glob",
-      [
-        "babel-plugin-dotenv",
-        {
-          "replacedModuleName": "import-dotenv"
-        }
-      ]
+      "import-glob"
     ]
   },
   "eslintConfig": {
