@@ -2,8 +2,6 @@
 
 My first formal attempt at a GraphQL server. Plausibly will be used for an application called Turn but I'm not sure...
 
-<hr>
-
 ## Current Tasks
 
 ### App Related Tasks
