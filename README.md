@@ -2,7 +2,7 @@
 
 My first formal attempt at a GraphQL server. Plausibly will be used for an application called Turn but I'm not sure...
 
-<br><hr>
+<hr>
 
 ## Current Tasks
 
@@ -15,7 +15,7 @@ My first formal attempt at a GraphQL server. Plausibly will be used for an appli
 - [ ] _July 29 2018_ - UserByIds
 - [ ] _July 29 2018_ - Input Validation
 
-<br><hr>
+<hr>
 
 ## Upcoming Tasks
 
@@ -23,7 +23,7 @@ My first formal attempt at a GraphQL server. Plausibly will be used for an appli
 
 - [ ] _July 29 2018_ - Heroku deployment
 
-<br><hr>
+<hr>
 
 ## Keep in Mind
 
@@ -38,7 +38,7 @@ My first formal attempt at a GraphQL server. Plausibly will be used for an appli
 - [ ] _July 29 2018_ - **Location of resolver logic** - Should the resolver logic be in a separate file? If so should it be in the ~models file~ or in a separate controllers file.
   - _July 29 2018_ - Attaching module specific methods to the model schema might be a bad idea because it would require adding unrelated module methods. A possible option could be defining the schema and model in a shared folder then importing module specific methods into that folder. Another option could be to detach the methods from the schema and have a standalone model file in each module.
 
-<br><hr>
+<hr>
 
 ## Completion Log
 
