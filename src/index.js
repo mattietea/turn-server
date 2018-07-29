@@ -1,7 +1,6 @@
-// import 'dotenv/config';
-import { apolloInit } from './src/services/apollo.service.js';
-import { dbInit } from './src/services/db.service';
-import { to } from './src/services/utility.service.js';
+import { apolloInit } from './services/apollo.service.js';
+import { dbInit } from './services/db.service.js';
+import { to } from './services/utility.service.js';
 (async () => {
   let error, url;
 

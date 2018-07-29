@@ -4,7 +4,9 @@
   "description": "A GraphQL server for the Turn platform.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js --exec babel-node",
+    "clean": "rm -rf ./dist",
+    "build": "npm run clean && babel -d ./dist ./src -s",
+    "start": "nodemon ./src/index.js --exec babel-node",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -44,7 +46,14 @@
   },
   "babel": {
     "presets": [
-      "env",
+      [
+        "env",
+        {
+          "targets": {
+            "node": "8.11.3"
+          }
+        }
+      ],
       "stage-3"
     ],
     "plugins": [
