@@ -1,6 +1,7 @@
 import { apolloInit } from './services/apollo.service.js';
 import { dbInit } from './services/db.service.js';
 import { to } from './services/utility.service.js';
+
 (async () => {
   let error, url;
 
