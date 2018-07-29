@@ -1,14 +1,15 @@
 type Query {
   userTest: String
-  userFindById(_id: ID!): User
-  userFindOne(user: UserInput!): User
-  userFindMany(user: UserInput): [User]
+  userFindOne(user: UserInput!): UserOutput
+  userFindMany(user: UserInput): [UserOutput]
+  userFindById(_id: ID!): UserOutput
+  userFindManyById(_ids: [ID]!): [UserOutput]
 }
 
 type Mutation {
   userTest(test: String!): String!
-  userCreate(user: UserInput!): User
-  userUpdateById(_id: ID, user: UserInput!): User
+  userCreate(user: UserInput!): UserOutput
+  userUpdateById(_id: ID, user: UserInput!): UserOutput
   userRemoveById(_id: ID): Boolean!
 }
 
@@ -17,6 +18,15 @@ input UserInput {
   lastName: String
   email: String
   password: String
+}
+
+type UserOutput {
+  _id: ID
+  createdAt: String
+  updateAt: String
+  firstName: String
+  lastName: String
+  email: String
 }
 
 type User {

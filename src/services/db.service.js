@@ -7,6 +7,8 @@ export const dbInit = () => {
     console.error(`💀 The database failed`, error);
   });
 
+  console.log('DB URI', process.env.DB_URI);
+
   return mongoose.connect(
     process.env.DB_URI,
     { useNewUrlParser: true }

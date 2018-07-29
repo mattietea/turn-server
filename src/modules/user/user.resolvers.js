@@ -6,14 +6,17 @@ const Query = {
   userTest: () => {
     return 'User query is working';
   },
-  userFindById: (root, { _id }) => {
-    return User.findById(_id);
-  },
   userFindOne: (root, { user }) => {
     return User.findOne(user);
   },
   userFindMany: (root, { user }) => {
     return User.find(user);
+  },
+  userFindById: (root, { _id }) => {
+    return User.findById(_id);
+  },
+  userFindManyById: (root, { _ids }) => {
+    return User.find({ _id: { $in: _ids } });
   }
 };
 
