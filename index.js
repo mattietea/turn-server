@@ -1,4 +1,4 @@
-import 'dotenv/config';
+// import 'dotenv/config';
 import { apolloInit } from './src/services/apollo.service.js';
 import { dbInit } from './src/services/db.service';
 import { to } from './src/services/utility.service.js';
