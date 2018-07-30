@@ -4,7 +4,7 @@ import { userText } from './user.text';
 
 const Query = {
   userTest: () => {
-    return 'User query is working';
+    return 'User query is working!';
   },
   userFindOne: (root, { user }) => {
     return User.findOne(user);
@@ -22,7 +22,7 @@ const Query = {
 
 const Mutation = {
   userTest: (root, { test }) => {
-    return `User mutation is working: ${test}`;
+    return `User mutation is working: ${test}!`;
   },
   userCreate: async (root, { user }) => {
     const exists = await User.findOne({ email: user.email }).exec();
