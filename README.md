@@ -6,11 +6,11 @@ This is my first formal attempt at a GraphQL server. I'll be doing my best to do
 
 ## Current Tasks
 
-### App Related Tasks
+### App Related
 
 - [ ] _July 29 2018_ - Authentication
 
-### User Related Tasks
+### User Related
 
 - [ ] _July 29 2018_ - UserByIds
 - [ ] _July 29 2018_ - Input Validation
@@ -19,19 +19,19 @@ This is my first formal attempt at a GraphQL server. I'll be doing my best to do
 
 ## Upcoming Tasks
 
-### App Related Tasks
+### App Related
 
 - [ ] _July 29 2018_ - Heroku deployment
 
 <br>
 
-## Completion Log
+## Completed Tasks
 
-### Partial Tasks
+### Partial
 
 - [ ] _July 29 2018_ - 1 Day - [Babel build](#babel-build)
 
-### Completed Tasks
+### Completed
 
 - [x] _July 29 2018_ - 1 Day - Environment file template
 - [x] _July 26 2018_ - 1 Day - [Environment file](#environment-file)
