@@ -29,7 +29,7 @@ My first formal attempt at a GraphQL server. Plausibly will be used for an appli
 
 ### Partial Tasks
 
-- [ ] _July 29 2018_ - 1 Day - [Build and clean script](#babel-build)
+- [ ] _July 29 2018_ - 1 Day - [Babel build](#babel-build)
 
   - Couldn't figure out how to make babel compile the index.js file and the src file. Had to move the index.js file into the src file.
 
@@ -43,7 +43,7 @@ My first formal attempt at a GraphQL server. Plausibly will be used for an appli
 
 - [ ] _July 29 2018_ - **Unique user email** - Should this be checked using MongoDB and its unique attribute or should I check for uniqueness in the resolver?
 
-- [ ] _July 29 2018_ - <a id="babel-build"></a>**Build entry file** - Originally the entry file, index.js, was outside of the src folder. I couldn't figure out how to make babel compile the index.js file and the src folder.
+- [ ] _July 29 2018_ - <a id="babel-build"></a> **Babel build** - Originally the entry file, index.js, was outside of the src folder. I couldn't figure out how to make babel compile the index.js file and the src folder.
 
 - [ ] _July 29 2018_ - **GraphQL interfaces** - Should I use interfaces? If I do, should all the GraphQL types be stored under one directory?
 
