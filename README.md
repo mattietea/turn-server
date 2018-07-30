@@ -8,7 +8,7 @@ My first formal attempt at a GraphQL server. Plausibly will be used for an appli
 
 ### App Related Tasks
 
-- [ ] _July 29 2018_ - [Authentication](#babel-build)
+- [ ] _July 29 2018_ - Authentication
 
 ### User Related Tasks
 
@@ -29,7 +29,7 @@ My first formal attempt at a GraphQL server. Plausibly will be used for an appli
 
 ### Partial Tasks
 
-- [ ] _July 29 2018_ - 1 Day - Build and clean script
+- [ ] _July 29 2018_ - 1 Day - [Build and clean script](#babel-build)
 
   - Couldn't figure out how to make babel compile the index.js file and the src file. Had to move the index.js file into the src file.
 
