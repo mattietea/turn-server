@@ -8,7 +8,7 @@ My first formal attempt at a GraphQL server. Plausibly will be used for an appli
 
 ### App Related Tasks
 
-- [ ] _July 29 2018_ - Authentication
+- [ ] _July 29 2018_ - [Authentication](#the-header)
 
 ### User Related Tasks
 
@@ -43,7 +43,7 @@ My first formal attempt at a GraphQL server. Plausibly will be used for an appli
 
 - [ ] _July 29 2018_ - **Unique user email** - Should this be checked using MongoDB and its unique attribute or should I check for uniqueness in the resolver?
 
-- [ ] _July 29 2018_ - **Build entry file** - Originally the entry file, index.js, was outside of the src folder. I couldn't figure out how to make babel compile the index.js file and the src folder.
+- [ ] _July 29 2018_ - <a id="babel-build"></a>**Build entry file** - Originally the entry file, index.js, was outside of the src folder. I couldn't figure out how to make babel compile the index.js file and the src folder.
 
 - [ ] _July 29 2018_ - **GraphQL interfaces** - Should I use interfaces? If I do, should all the GraphQL types be stored under one directory?
 
@@ -52,5 +52,3 @@ My first formal attempt at a GraphQL server. Plausibly will be used for an appli
 - [ ] _July 29 2018_ - **Location of resolver logic** - Should the resolver logic be in a separate file? If so should it be in the models file or in a separate controllers file.
 
   - _July 29 2018_ - Attaching module specific methods to the model schema might be a bad idea because it would require adding unrelated module methods. A possible option could be defining the schema and model in a shared folder then importing module specific methods into that folder. Another option could be to detach the methods from the schema and have a standalone model file in each module.
-
-<3
