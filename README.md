@@ -8,7 +8,7 @@ My first formal attempt at a GraphQL server. Plausibly will be used for an appli
 
 ### App Related Tasks
 
-- [ ] _July 29 2018_ - [Authentication](#the-header)
+- [ ] _July 29 2018_ - [Authentication](#babel-build)
 
 ### User Related Tasks
 
