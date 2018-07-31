@@ -5,12 +5,11 @@ import { createSchema } from './utility.service.js';
 
 /**
  * TODO: Fix format error once its fixed on the repository
- * Issue: https://github.com/apollographql/graphql-tools/issues/890
+ * Issue: https://github.com/thebigredgeek/apollo-errors/issues/28
  */
 export const apolloInit = () => {
   const server = new ApolloServer({
-    schema: createSchema(typeDefs, resolvers),
-    formatError: error => error.originalError.errors
+    schema: createSchema(typeDefs, resolvers)
   });
 
   return server.listen();

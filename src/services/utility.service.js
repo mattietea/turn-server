@@ -1,5 +1,4 @@
 import { makeExecutableSchema, mergeSchemas } from 'apollo-server';
-
 export const createSchema = (allTypeDefs, AllResolvers) => {
   const typeDefsArray = Object.values(allTypeDefs);
   const resolverArray = Object.values(AllResolvers);
@@ -17,3 +16,22 @@ export const to = promise =>
       return [null, data];
     })
     .catch(error => [error]);
+
+export const validate = async (schema, input) => {
+  const [errors, valid] = await to(
+    schema.validate(input, { abortEarly: false })
+  );
+
+  if (errors) {
+    const formattedErrors = errors.inner.map(error => {
+      return {
+        path: error.path,
+        message: error.message
+      };
+    });
+
+    return [{ fields: formattedErrors }];
+  }
+
+  return [null, valid];
+};

@@ -12,8 +12,7 @@ This is my first formal attempt at a GraphQL server. I'll be doing my best to do
 
 ### User Related
 
-- [ ] _July 29 2018_ - UserByIds
-- [ ] _July 29 2018_ - Input Validation
+- [ ] _July 29 2018_ - [Input Validation](#input-validation)
 
 <br>
 
@@ -33,19 +32,16 @@ This is my first formal attempt at a GraphQL server. I'll be doing my best to do
 
 ### Completed
 
+- [x] _July 29 2018_ - 1 Day - UserFindManyById
 - [x] _July 29 2018_ - 1 Day - Environment file template
 - [x] _July 26 2018_ - 1 Day - [Environment file](#environment-file)
-- [ ] _July 25 2018_ - 1 Day - [GraphQL file extension](#graphql-extension)
+- [x] _July 25 2018_ - 1 Day - [GraphQL file extension](#graphql-extension)
 
 <br>
 
 ## Keep in Mind
 
 - [ ] _July 29 2018_ - **Unique email index** - Should the user's email index be checked using Mongoose's unique property or inside the userCreate resolver?
-
-- [ ] _July 29 2018_ - **Babel build** <a id="babel-build"></a> - My original folder structure had my entry in my projects root folder. Unfortunately, Babel's --out-dir flag specifies that I provide it a directory and the --out-file flag requires a given file. Babel's CLI doesn't have an option to do both unless I combine the commands.
-
-  - _July 29 2018_ - I tried combining the commands but ran into another issue, the --out-file needs the file to already exist. Using several scripts and an elaborate combination of mkdirs and touch commands I got it working but decided against it. Instead, I caved in and moved the entry file into the src folder.
 
 - [ ] _July 29 2018_ - **GraphQL interfaces** - I don't feel that defining interfaces are necessary right now due to the size of my code base. I see where they could potentially be useful later but, I will cross that bridge if and when I get there.
 
@@ -54,6 +50,14 @@ This is my first formal attempt at a GraphQL server. I'll be doing my best to do
 - [ ] _July 29 2018_ - **Location of resolver logic** - Currently, most of my resolver logic is inside the resolver itself. I'm not sure if this is the best way to do it. Maybe they should be included in the model file or in a separate controller file?
 
   - _July 29 2018_ - Attaching module specific methods to the model schema might be a bad idea because it would require adding unrelated methods to the module file. A possible option could be defining the schema and model in a shared folder then importing module specific methods into that folder. Another option could be to detach the methods from the schema and having a standalone model file in each module.
+
+## Issues
+
+- [ ] _July 30 2018_ - **Input Validation** <a id="input-validation"></a> - I found that Error's aren't being returned in the format I expected. It might be an issue to do with[this](5) or [this](6) or [this](7).
+
+- [ ] _July 29 2018_ - **Babel build** <a id="babel-build"></a> - My original folder structure had my entry in my projects root folder. Unfortunately, Babel's --out-dir flag specifies that I provide it a directory and the --out-file flag requires a given file. Babel's CLI doesn't have an option to do both unless I combine the commands.
+
+  - _July 29 2018_ - I tried combining the commands but ran into another issue, the --out-file needs the file to already exist. Using several scripts and an elaborate combination of mkdirs and touch commands I got it working but decided against it. Instead, I caved in and moved the entry file into the src folder.
 
 - [x] _July 26 2018_ - **Environment file** <a id="environment-file"></a> - I used [babel-plugin-inline-dotenv](3) to import the .env file. I had issues with the environment variables and schema not refreshing because I tried moving `BABEL_DISABLE_CACHE=1` into the .env file. This didn't work because the variable was set after babel transpiled the code. To set the variable before, I needed to add it to the `nodemonConfig` object so the variable was set before babel ran.
 
@@ -65,3 +69,6 @@ This is my first formal attempt at a GraphQL server. I'll be doing my best to do
 [2]: https://github.com/novemberborn/babel-plugin-import-glob
 [3]: https://github.com/brysgo/babel-plugin-inline-dotenv
 [4]: https://github.com/okgrow/graphql-scalars
+[5]: https://github.com/apollographql/graphql-tools/issues/480
+[6]: https://github.com/thebigredgeek/apollo-errors/issues/28
+[7]: https://github.com/apollographql/graphql-tools/issues/906
