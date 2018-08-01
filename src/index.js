@@ -3,7 +3,7 @@ import { dbInit } from './services/db.service.js';
 import { to } from './services/utility.service.js';
 
 (async () => {
-  let error, app;
+  let error, url;
 
   // Catch unhandled promises
   process.on('unhandledRejection', error => {
@@ -16,7 +16,7 @@ import { to } from './services/utility.service.js';
   console.log(`🎉 The db connection started`);
 
   // Initialize Apollo server
-  [error, app] = await to(apolloInit());
-  if (error) console.error(`💀 The db failed`, error);
-  console.log(`🚀 The server started at port ${app.address().port}`);
+  [error, { url }] = await to(apolloInit());
+  if (error) console.error(`💥 The server failed`, error);
+  console.log(`🚀 The server started at ${url} `);
 })();

@@ -1,4 +1,4 @@
-import { ApolloError, UserInputError } from 'apollo-server-express';
+import { ApolloError, UserInputError } from 'apollo-server';
 import { validate } from '../../services/utility.service';
 import { User } from './user.model';
 import { userText } from './user.text';

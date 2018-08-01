@@ -4,7 +4,7 @@ export const userCreateValidator = object().shape({
   firstName: string(`Please make sure your first name is a string.`).required(
     `You're required to provide a first name.`
   ),
-  lastName: string(`Please make sure your last name is a string.`).required(
+  lastName: string(`Please make sure your lsat name is a string.`).required(
     `You're required to provide a last name.`
   ),
   email: string(`Please make sure your email is a string.`)
