@@ -12,8 +12,6 @@ This is my first formal attempt at a GraphQL server. I'll be doing my best to do
 
 ### User Related
 
-- [ ] _July 29 2018_ - [Input Validation](#input-validation)
-
 <br>
 
 ## Upcoming Tasks
@@ -30,6 +28,7 @@ This is my first formal attempt at a GraphQL server. I'll be doing my best to do
 ### Partial
 
 - [ ] _July 29 2018_ - 1 Day - [Babel build](#babel-build)
+- [ ] _July 29 2018_ - [Input Validation](#input-validation)
 
 ### Completed
 
