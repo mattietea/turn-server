@@ -1,4 +1,5 @@
-import { ApolloServer } from 'apollo-server';
+import { ApolloServer } from 'apollo-server-express';
+import express from 'express';
 import * as resolvers from '../modules/**/*.*resolvers.js';
 import * as typeDefs from '../modules/**/*.*types.gql';
 import { createSchema } from './utility.service.js';
@@ -12,5 +13,13 @@ export const apolloInit = () => {
     schema: createSchema(typeDefs, resolvers)
   });
 
-  return server.listen();
+  const app = express();
+
+  server.applyMiddleware({ app });
+
+  return new Promise((resolve, reject) => {
+    const listening = app.listen({ port: process.env.PORT }, () => {
+      resolve(listening);
+    });
+  });
 };
