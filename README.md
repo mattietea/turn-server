@@ -53,11 +53,15 @@ This is my first formal attempt at a GraphQL server. I'll be doing my best to do
 
 ## Issues
 
+<<<<<<< HEAD
 - [ ] _July 31 2018_ - **Add Express** <a id="add-express"></a> - I want to add OAuth authentication for Facebook. I discovered that OAuth requires a callback URL so I needed to add Express in order to add routes to my server.
 
 - [ ] _July 30 2018_ - **User input validation** <a id="input-validation"></a>
 
   - I found that Error's aren't being returned in the format I expected. It might be an issue to do with [this](5) or [this](6) or [this](7).
+=======
+- [ ] _July 30 2018_ - **Input Validation** <a id="input-validation"></a> - I found that Error's aren't being returned in the format I expected. It might be an issue to do with[this](5) or [this](6) or [this](7).
+>>>>>>> parent of ea6d7ba... Readme spacing
 
 - [ ] _July 29 2018_ - **Babel build** <a id="babel-build"></a> - My original folder structure had my entry in my projects root folder. Unfortunately, Babel's --out-dir flag specifies that I provide it a directory and the --out-file flag requires a given file. Babel's CLI doesn't have an option to do both unless I combine the commands.
 
