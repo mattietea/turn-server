@@ -21,6 +21,7 @@ This is my first formal attempt at a GraphQL server. I'll be doing my best to do
 ### App Related
 
 - [ ] _July 29 2018_ - Heroku deployment
+- [ ] _July 31 2018_ - [Add Express](#add-express)
 
 <br>
 
@@ -41,6 +42,8 @@ This is my first formal attempt at a GraphQL server. I'll be doing my best to do
 
 ## Keep in Mind
 
+- [ ] _July 31 2018_ - **Add Express** <a id="add-express"></a> - I want to add OAuth authentication for Facebook. I discovered that OAuth requires a callback URL so I needed to add Express in order to add routes to my server.
+
 - [ ] _July 29 2018_ - **Unique email index** - Should the user's email index be checked using Mongoose's unique property or inside the userCreate resolver?
 
 - [ ] _July 29 2018_ - **GraphQL interfaces** - I don't feel that defining interfaces are necessary right now due to the size of my code base. I see where they could potentially be useful later but, I will cross that bridge if and when I get there.
@@ -53,19 +56,9 @@ This is my first formal attempt at a GraphQL server. I'll be doing my best to do
 
 ## Issues
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-- [ ] _July 31 2018_ - **Add Express** <a id="add-express"></a> - I want to add OAuth authentication for Facebook. I discovered that OAuth requires a callback URL so I needed to add Express in order to add routes to my server.
-
 - [ ] _July 30 2018_ - **User input validation** <a id="input-validation"></a>
 
   - I found that Error's aren't being returned in the format I expected. It might be an issue to do with [this](5) or [this](6) or [this](7).
-=======
-- [ ] _July 30 2018_ - **Input Validation** <a id="input-validation"></a> - I found that Error's aren't being returned in the format I expected. It might be an issue to do with[this](5) or [this](6) or [this](7).
->>>>>>> parent of ea6d7ba... Readme spacing
-=======
-- [ ] _July 30 2018_ - **Input Validation** <a id="input-validation"></a> - I found that Error's aren't being returned in the format I expected. It might be an issue to do with [this](5) or [this](6) or [this](7).
->>>>>>> parent of 151e44b... Added Express
 
 - [ ] _July 29 2018_ - **Babel build** <a id="babel-build"></a> - My original folder structure had my entry in my projects root folder. Unfortunately, Babel's --out-dir flag specifies that I provide it a directory and the --out-file flag requires a given file. Babel's CLI doesn't have an option to do both unless I combine the commands.
 
