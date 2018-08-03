@@ -24,7 +24,7 @@ const Query = {
 
 const Mutation = {
   userTest: (root, { test }) => {
-    return `User mutation is working: ${test}!`;
+    return `User mutation is working: ${test}`;
   },
 
   userCreate: async (root, { user }) => {

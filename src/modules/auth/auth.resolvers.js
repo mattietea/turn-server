@@ -6,7 +6,7 @@ const Query = {
 
 const Mutation = {
   authTest: (root, { test }) => {
-    return `Auth mutation is working: ${test}!`;
+    return `Auth mutation is working: ${test}`;
   }
 };
 
