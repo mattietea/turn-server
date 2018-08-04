@@ -1,14 +1,14 @@
-import { makeExecutableSchema, mergeSchemas } from 'apollo-server';
+import { makeExecutableSchema } from 'graphql-tools';
+import { mergeResolvers, mergeTypes } from 'merge-graphql-schemas';
 
 export const createSchema = (allTypeDefs, AllResolvers) => {
   const typeDefsArray = Object.values(allTypeDefs);
   const resolverArray = Object.values(AllResolvers);
 
-  const schemas = typeDefsArray.map((typeDefs, index) =>
-    makeExecutableSchema({ typeDefs, resolvers: resolverArray[index] })
-  );
+  const typeDefs = mergeTypes(typeDefsArray, { all: true });
+  const resolvers = mergeResolvers(resolverArray);
 
-  return mergeSchemas({ schemas });
+  return makeExecutableSchema({ typeDefs, resolvers });
 };
 
 export const to = promise =>

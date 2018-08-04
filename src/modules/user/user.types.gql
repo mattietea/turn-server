@@ -13,13 +13,6 @@ type Mutation {
   userRemoveById(_id: ID): Boolean!
 }
 
-input UserInput {
-  firstName: String
-  lastName: String
-  email: String
-  password: String
-}
-
 type UserOutput {
   _id: ID
   createdAt: String

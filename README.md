@@ -9,7 +9,6 @@ This is my first formal attempt at a GraphQL server. I'll be doing my best to do
 ### Now Tasks
 
 - [ ] _7/29/18_ - **Authentication**
-- [ ] _8/03/18_ - **Change mergeSchema library** - [LI-02](#li-02)
 
 ### Later Tasks
 
@@ -18,6 +17,7 @@ This is my first formal attempt at a GraphQL server. I'll be doing my best to do
 
 ### Revisit Tasks
 
+- [ ] _8/03/18_ - **Change mergeSchema library** - [LI-02](#li-02)
 - [ ] _7/29/18_ - **Input validation** - [LI-01](#li-01)
 - [ ] _7/29/18_ - **Babel build** - [DI-03](#di-03)
 
