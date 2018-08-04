@@ -40,7 +40,7 @@ This is my first formal attempt at a GraphQL server. I'll be doing my best to do
 
 - [ ] **LI-01** <a id="li-01"></a> - **Input validation**
 
-  - _7/30/18_ - I found that Error's aren't being returned in the format I expected. It might be an issue to do with [this](5) or [this](6) or [this](7).
+  - _7/30/18_ - I found that errors aren't being returned in the format I expected. It might be an issue to do with [this](5) or [this](6) or [this](7).
 
 ### Developer Issues
 
