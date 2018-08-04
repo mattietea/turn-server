@@ -1,5 +1,5 @@
 import { ApolloError, UserInputError } from 'apollo-server';
-import { validate } from '../../services/utility.service';
+import { validate } from '../../services/utilities/index.utility';
 import { User } from './user.model';
 import { userText } from './user.text';
 import { userCreateValidator, userUpdateValidator } from './user.validation';
@@ -33,6 +33,7 @@ const Mutation = {
 
     const exists = await User.findOne({ email: user.email }).exec();
     if (exists) throw new ApolloError(userText.duplicate);
+
     return new User(user).save();
   },
 

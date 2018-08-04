@@ -1,6 +1,8 @@
-import { apolloInit } from './services/apollo.service.js';
-import { dbInit } from './services/db.service.js';
-import { to } from './services/utility.service.js';
+import {
+  dbInitialize,
+  serverInitialize
+} from './services/initializers/index.initialize.js';
+import { to } from './services/utilities/index.utility.js';
 
 (async () => {
   let error, url;
@@ -11,12 +13,12 @@ import { to } from './services/utility.service.js';
   });
 
   // Initialize Mongoose
-  [error] = await to(dbInit());
+  [error] = await to(dbInitialize());
   if (error) console.error(`💀 The db failed`, error);
   console.log(`🎉 The db connection started`);
 
   // Initialize Apollo server
-  [error, { url }] = await to(apolloInit());
+  [error, { url }] = await to(serverInitialize());
   if (error) console.error(`💥 The server failed`, error);
   console.log(`🚀 The server started at ${url} `);
 })();
