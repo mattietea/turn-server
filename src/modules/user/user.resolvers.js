@@ -1,5 +1,5 @@
 import { ApolloError, UserInputError } from 'apollo-server';
-import { validate } from '../../services/utilities/index.utility';
+import { validate } from '../../services/utility.service';
 import { User } from './user.model';
 import { userText } from './user.text';
 import { userCreateValidator, userUpdateValidator } from './user.validation';

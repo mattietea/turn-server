@@ -1,14 +1,7 @@
 type Query {
-  authTest: String
+  authTest: String @lowerCase
 }
 
 type Mutation {
   authTest(test: String!): String
-}
-
-input UserInput {
-  firstName: String
-  lastName: String
-  email: String
-  password: String
 }
