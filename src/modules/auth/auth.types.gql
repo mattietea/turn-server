@@ -1,7 +1,7 @@
 type Query {
-  authTest: String @lowerCase
+  authTest: String!
 }
 
 type Mutation {
-  authTest(test: String!): String
+  authTest(test: String!): String!
 }

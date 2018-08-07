@@ -1,28 +1,29 @@
 import { object, string } from 'yup';
+import { getText } from '../../services/utility.service';
 
 export const userCreateValidator = object().shape({
-  firstName: string(`Please make sure your first name is a string.`).required(
-    `You're required to provide a first name.`
-  ),
-  lastName: string(`Please make sure your lsat name is a string.`).required(
-    `You're required to provide a last name.`
-  ),
-  email: string(`Please make sure your email is a string.`)
-    .email(`Please make sure your email is formatted correctly.`)
-    .required(`You're required to provide a email.`),
-  password: string(`Please make sure your password is a string.`)
-    .min(6, `Please make sure your password is more than six characters long.`)
-    .required()
+  firstName: string(getText.invalidType('first name', 'string'))
+    .min(2, getText.invalidLength('first name', 2))
+    .required(getText.required('first name')),
+  lastName: string(getText.invalidType('last name', 'string'))
+    .min(2, getText.invalidLength('last name', 2))
+    .required(getText.required('last name')),
+  email: string(getText.invalidType('email', 'string'))
+    .email(getText.invalidType('email', 'email address'))
+    .required(getText.required('email')),
+  password: string(getText.invalidType('password', 'string'))
+    .min(6, getText.invalidLength('password', 6))
+    .required(getText.required('password'))
 });
 
 export const userUpdateValidator = object().shape({
-  firstName: string(`Please make sure your first name is a string.`),
-  lastName: string(`Please make sure your last name is a string.`),
-  email: string(`Please make sure your email is a string.`).email(
-    `Please make sure your email is formatted correctly.`
+  firstName: string(getText.invalidType('first name', 'string')),
+  lastName: string(getText.invalidType('last name', 'string')),
+  email: string(getText.invalidType('email', 'string')).email(
+    getText.invalidType('email', 'email address')
   ),
-  password: string(`Please make sure your password is a string.`).min(
+  password: string(getText.invalidType('password', 'string')).min(
     6,
-    `Please make sure your password is more than six characters long.`
+    getText.invalidLength('password', 6)
   )
 });
