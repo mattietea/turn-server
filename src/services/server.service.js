@@ -3,13 +3,16 @@ import express from 'express';
 import * as resolvers from '../**/*.*+(resolvers.js|scalar.js)';
 import * as directives from '../**/*.*directive.js';
 import * as typeDefs from '../**/*.*types.gql';
-import { createSchema } from './utility.service.js';
+import { createSchema } from '../utility/schema.utility';
 
 export const serverService = () => {
   const app = express();
 
   const server = new ApolloServer({
-    schema: createSchema(typeDefs, resolvers, directives)
+    schema: createSchema(typeDefs, resolvers, directives),
+    context: ({ req }) => ({
+      token: req.headers['authorization']
+    })
   });
 
   server.applyMiddleware({ app });

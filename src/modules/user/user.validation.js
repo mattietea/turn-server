@@ -1,5 +1,5 @@
 import { object, string } from 'yup';
-import { getText } from '../../services/utility.service';
+import { getText } from '../../utility/text.service';
 
 export const userCreateValidator = object().shape({
   firstName: string(getText.invalidType('first name', 'string'))

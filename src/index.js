@@ -1,6 +1,6 @@
 import { databaseService } from './services/database.service.js';
 import { serverService } from './services/server.service.js';
-import { to } from './services/utility.service.js';
+import { to } from './utility/misc.utility.js';
 
 (async () => {
   let error, port;

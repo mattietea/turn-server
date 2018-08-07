@@ -1,5 +1,6 @@
 type Query {
   authTest: String!
+  authSignIn(email: String!, password: String!): String
 }
 
 type Mutation {

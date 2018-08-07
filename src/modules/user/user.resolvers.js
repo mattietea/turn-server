@@ -1,7 +1,6 @@
-import { ApolloError, UserInputError } from 'apollo-server-express';
-import { getText, to, validate } from '../../services/utility.service';
+import { ApolloError } from 'apollo-server-express';
+import { getText } from '../../utility/text.service';
 import { User } from './user.model';
-import { userCreateValidator, userUpdateValidator } from './user.validation';
 
 const Query = {
   userTest: () => {
@@ -26,8 +25,8 @@ const Mutation = {
     return `User mutation is working: ${test}`;
   },
   userCreate: async (root, { user }) => {
-    const [error, valid] = await to(validate(userCreateValidator));
-    if (!valid) throw new UserInputError(getText.invalidInputs, error);
+    // const [error, valid] = await to(validate(userCreateValidator));
+    // if (!valid) throw new UserInputError(getError.invalidInputs, error);
 
     const exists = await User.findOne({ email: user.email }).exec();
     if (exists) throw new ApolloError(getText.duplicate('user', 'email'));
@@ -35,11 +34,11 @@ const Mutation = {
     return new User(user).save();
   },
   userUpdateById: async (root, { _id, user }) => {
+    // const [error, valid] = await to(validate(userUpdateValidator));
+    // if (!valid) throw new UserInputError(getError.invalidInputs, error);
+
     const doc = await User.findById(_id).exec();
     if (!doc) throw new ApolloError(getText.notFound('user', 'id'));
-
-    const [error, valid] = await to(validate(userUpdateValidator));
-    if (!valid) throw new UserInputError(getText.invalidInputs, error);
 
     return doc.set(user).save();
   },
