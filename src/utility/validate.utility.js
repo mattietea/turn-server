@@ -5,14 +5,11 @@ export const validate = async (schema, input) => {
     schema.validate(input, { abortEarly: false })
   );
 
-  if (!errors) return [null, valid];
+  if (valid) return [null, valid];
 
-  const formattedErrors = errors.inner.map(error => {
+  return errors.inner.map(error => {
     return {
-      path: error.path,
-      message: error.message
+      [error.path]: true
     };
   });
-
-  return [{ fields: formattedErrors }];
 };

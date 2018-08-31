@@ -1,14 +1,13 @@
 import { AuthenticationError } from 'apollo-server-core';
 import { SchemaDirectiveVisitor } from 'graphql-tools';
 import jwt from 'jsonwebtoken';
-import { getError } from '../../utility/text.service';
 
 export default class AuthedDirective extends SchemaDirectiveVisitor {
   visitFieldDefinition (field) {
     const { resolve } = field;
 
     field.resolve = async (root, args, context, info) => {
-      if (!context.token) throw new AuthenticationError(getError.notAuthed);
+      if (!context.token) throw new AuthenticationError('Not Authed');
 
       try {
         const { id } = jwt.verify(
@@ -24,7 +23,7 @@ export default class AuthedDirective extends SchemaDirectiveVisitor {
           info
         );
       } catch (error) {
-        throw new AuthenticationError(getError.invalidToken);
+        throw new AuthenticationError('Invalid Token');
       }
     };
   }

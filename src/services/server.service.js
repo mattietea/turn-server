@@ -1,4 +1,5 @@
 import { ApolloServer } from 'apollo-server-express';
+import cors from 'cors';
 import express from 'express';
 import * as resolvers from '../**/*.*+(resolvers.js|scalar.js)';
 import * as directives from '../**/*.*directive.js';
@@ -14,6 +15,15 @@ export const serverService = () => {
       token: req.headers['authorization']
     })
   });
+
+  app.use(
+    cors({
+      origin: '*',
+      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+      preflightContinue: false,
+      optionsSuccessStatus: 204
+    })
+  );
 
   server.applyMiddleware({ app });
 
