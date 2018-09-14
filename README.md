@@ -8,7 +8,7 @@ This is my first formal attempt at a GraphQL server. I'll be doing my best to do
 
 ### Now Tasks
 
-- [ ] _7/29/18_ - **Authentication**
+- [x] _7/29/18_ - **Authentication**
 
 ### Later Tasks
 
