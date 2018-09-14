@@ -9,8 +9,8 @@ type Query {
 type Mutation {
   userTest(test: String!): String!
   userCreate(user: UserInput!): UserOutput
-  userUpdateById(_id: ID, user: UserInput!): UserOutput
-  userRemoveById(_id: ID): Boolean!
+  userUpdateById(_id: ID, user: UserInput!): UserOutput @authed
+  userRemoveById(_id: ID): Boolean! @authed
 }
 
 type UserOutput {
