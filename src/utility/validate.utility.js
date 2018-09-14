@@ -9,7 +9,7 @@ export const validate = async (schema, input) => {
 
   return errors.inner.map(error => {
     return {
-      [error.path]: true
+      [error.path]: error.message
     };
   });
 };

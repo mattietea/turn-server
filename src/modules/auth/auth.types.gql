@@ -6,17 +6,3 @@ type Mutation {
   authTest(test: String!): String!
   authSignIn(email: String!, password: String!): String
 }
-
-type SignInOutput {
-  token: String
-  error: ErrorType
-}
-
-type ErrorType {
-  message: String
-  field: [FieldType]
-}
-
-type FieldType {
-  field: Boolean
-}
